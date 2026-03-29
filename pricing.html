@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金プラン｜株式会社Gratitude</title>
+  <meta name="description" content="株式会社GratitudeのHP作成・MEO対策の料金プランをご紹介します。スタンダード・プレミアムの2プランをご用意しています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #0d1b3e;
+      --navy-mid: #162447;
+      --accent: #1e6bdc;
+      --accent-light: #3b82f6;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --gray-bg: #f5f7fb;
+      --gray-text: #666;
+      --text: #1a1a2e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 62, 0.97);
+      backdrop-filter: blur(8px);
+      padding: 0 2rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+
+    .logo-en {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+
+    .logo-ja {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.1em;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.8rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 3px;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+
+    nav a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    nav a.active { color: var(--white); background: rgba(255,255,255,0.1); }
+
+    .nav-cta {
+      background: var(--accent) !important;
+      color: var(--white) !important;
+      font-weight: 700;
+      padding: 0.6rem 1.2rem !important;
+      border-radius: 4px !important;
+      margin-left: 0.5rem;
+    }
+
+    .nav-cta:hover { background: var(--accent-light) !important; }
+
+    /* ========== PAGE HERO ========== */
+    .page-hero {
+      background: linear-gradient(135deg, #0d1b3e 0%, #162447 40%, #1a3a6e 100%);
+      padding: 7rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(30, 107, 220, 0.12) 0%, transparent 70%);
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .page-hero-label {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 0.3rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 2;
+    }
+
+    /* ========== PRICING SECTION ========== */
+    .pricing-section {
+      background: var(--gray-bg);
+      padding: 5rem 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-en {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--gray-text);
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+
+    /* ========== PRICING CARDS ========== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--gold);
+      position: relative;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -1px;
+      right: 1.5rem;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 0.9rem;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .pricing-card-head {
+      background: var(--navy);
+      padding: 2rem 2rem 1.8rem;
+      color: var(--white);
+    }
+
+    .pricing-card.featured .pricing-card-head {
+      background: linear-gradient(135deg, #162447 0%, #1a3a6e 100%);
+    }
+
+    .plan-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+
+    .price-amount {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .price-unit {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+    }
+
+    .price-tax {
+      display: block;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    .pricing-card-body {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-desc {
+      color: var(--gray-text);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      padding: 0.5rem 0;
+      font-size: 0.88rem;
+      color: var(--text);
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .features-list li::before {
+      content: '✓';
+      display: inline-block;
+      min-width: 18px;
+      height: 18px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    .pricing-card.featured .features-list li::before {
+      background: var(--gold);
+    }
+
+    .btn-plan {
+      display: block;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-plan:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-plan-gold {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+
+    .btn-plan-gold:hover {
+      background: #b8943e;
+      border-color: #b8943e;
+      color: var(--white);
+    }
+
+    /* ========== NOTE SECTION ========== */
+    .note-section {
+      background: var(--white);
+      padding: 4rem 2rem;
+    }
+
+    .note-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--gray-bg);
+      border-radius: 8px;
+      padding: 2rem 2.5rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .note-box h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .note-box ul {
+      list-style: none;
+    }
+
+    .note-box ul li {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      padding: 0.3rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .note-box ul li::before {
+      content: '※';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: var(--navy);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--navy);
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+
+    .btn-white:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #0a0f1e;
+      color: rgba(255,255,255,0.5);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      nav { display: none; }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        order: -1;
+      }
+
+      .price-amount {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-en">Gratitude</span>
+      <span class="logo-ja">株式会社Gratitude</span>
+    </a>
+    <nav>
+      <a href="index.html#services">サービス</a>
+      <a href="index.html#flow">ご依頼の流れ</a>
+      <a href="index.html#why">選ばれる理由</a>
+      <a href="pricing.html" class="active">料金プラン</a>
+      <a href="index.html#company">会社概要</a>
+      <a href="index.html#contact" class="nav-cta">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-hero-label">Pricing Plans</span>
+      <h1>料金プラン</h1>
+      <p>ビジネスの規模や目標に合わせて、<br>最適なプランをお選びいただけます。</p>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-en">Plans</span>
+        <h2 class="section-title">2つのプランをご用意</h2>
+        <p class="section-desc">目的・予算に応じてお選びください。どちらのプランも無料相談から始められます。</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- スタンダード -->
+        <div class="pricing-card">
+          <div class="pricing-card-head">
+            <div class="plan-name">Standard</div>
+            <div class="plan-title">スタンダード</div>
+            <div class="plan-price">
+              <span class="price-amount">19,800</span>
+              <span class="price-unit">円〜</span>
+            </div>
+            <span class="price-tax">税込 21,780円〜</span>
+          </div>
+          <div class="pricing-card-body">
+            <p class="plan-desc">
+              はじめてホームページを作る方や、シンプルなサイトをお求めの方に最適なプランです。
+            </p>
+            <ul class="features-list">
+              <li>5ページ構成のホームページ制作</li>
+              <li>レスポンシブデザイン（スマホ対応）</li>
+              <li>お問い合わせフォーム設置</li>
+              <li>基本的なSEO設定</li>
+              <li>Google アナリティクス連携</li>
+              <li>公開後30日間の無償サポート</li>
+            </ul>
+            <a href="index.html#contact" class="btn-plan">無料相談をする →</a>
+          </div>
+        </div>
+
+        <!-- プレミアム -->
+        <div class="pricing-card featured">
+          <div class="featured-badge">おすすめ</div>
+          <div class="pricing-card-head">
+            <div class="plan-name">Premium</div>
+            <div class="plan-title">プレミアム</div>
+            <div class="plan-price">
+              <span class="price-amount">34,980</span>
+              <span class="price-unit">円〜</span>
+            </div>
+            <span class="price-tax">税込 38,478円〜</span>
+          </div>
+          <div class="pricing-card-body">
+            <p class="plan-desc">
+              集客・ブランディングを本格化したい方向け。MEO対策もセットで、より多くの来店・問い合わせを実現します。
+            </p>
+            <ul class="features-list">
+              <li>10ページ構成のホームページ制作</li>
+              <li>レスポンシブデザイン（スマホ対応）</li>
+              <li>お問い合わせフォーム・LP制作</li>
+              <li>SEO強化設定・構造最適化</li>
+              <li>Google アナリティクス・サーチコンソール連携</li>
+              <li>MEO対策（Googleビジネスプロフィール最適化）</li>
+              <li>口コミ対応・投稿代行（月2回）</li>
+              <li>公開後90日間の無償サポート</li>
+              <li>月次レポート・改善提案</li>
+            </ul>
+            <a href="index.html#contact" class="btn-plan btn-plan-gold">無料相談をする →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTES -->
+  <section class="note-section">
+    <div class="container">
+      <div class="note-box">
+        <h3>料金に関するご注意</h3>
+        <ul>
+          <li>表示価格は税抜き表示です（税込価格は別途記載）。</li>
+          <li>ページ数・機能のご要望によって料金が変動する場合があります。</li>
+          <li>ドメイン・サーバー費用は別途必要です（ご案内可能）。</li>
+          <li>既存サイトのリニューアルも別途お見積り対応いたします。</li>
+          <li>まずはお気軽に無料相談をご利用ください。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>まずは無料でご相談ください</h2>
+      <p>お見積り・ご不明な点はお気軽にお問い合わせください。</p>
+      <a href="index.html#contact" class="btn-white">無料相談はこちら →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 株式会社Gratitude. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
