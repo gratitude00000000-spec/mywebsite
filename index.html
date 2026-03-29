@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1a1a2e;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #c73652;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #1a1a2e;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 2rem;
+      border-left: 4px solid #e94560;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #1a1a2e;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      background: #f4f4f4;
+    }
+
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .contact-inner h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1a1a2e;
+    }
+
+    .contact-inner p {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      background: #1a1a2e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">My Website</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>ようこそ</h1>
+    <p>ここにあなたのメッセージを入れてください。シンプルでモダンなホームページです。</p>
+    <a href="#about" class="btn">詳しく見る</a>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p style="text-align:center; color:#555; max-width:700px; margin:0 auto;">
+      ここに自己紹介や会社概要などを書いてください。あなたのことや、このサイトの目的について説明しましょう。
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>サービス 1</h3>
+        <p>サービスの説明をここに書いてください。何を提供しているかを簡潔に伝えましょう。</p>
+      </div>
+      <div class="card">
+        <h3>サービス 2</h3>
+        <p>サービスの説明をここに書いてください。何を提供しているかを簡潔に伝えましょう。</p>
+      </div>
+      <div class="card">
+        <h3>サービス 3</h3>
+        <p>サービスの説明をここに書いてください。何を提供しているかを簡潔に伝えましょう。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>Contact</h2>
+      <p>お問い合わせはこちらからどうぞ。</p>
+      <a href="mailto:your@email.com" class="btn">メールを送る</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 My Website. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
