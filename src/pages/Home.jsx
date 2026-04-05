@@ -10,8 +10,7 @@ export default function Home() {
           Okinawa-based Business Group
         </p>
         <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-          <span className="text-amber-400">価値</span>を創り、
-          <br />事業を加速させる。
+          創造する
         </h1>
         <p className="mt-6 max-w-xl text-white/60 leading-8">
           株式会社Gratitudeは、飲食・集客・マーケティング・採用支援を通じて、
