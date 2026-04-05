@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# React Router の SPA ルーティング対応
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
