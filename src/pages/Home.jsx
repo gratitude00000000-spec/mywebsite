@@ -77,7 +77,9 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-6">
 
           {/* 那覇 */}
-          <div className="border border-amber-400/20 p-8 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+          <div className="border border-amber-400/20 rounded-2xl bg-white/5 hover:bg-white/10 transition overflow-hidden">
+            <img src="/naha-wedding-kokusaistreet-.JPG" alt="PARTYSPACE NEXT那覇" className="w-full h-48 object-cover" />
+            <div className="p-8">
             <h3 className="text-xl font-bold mb-1">
               <a
                 href="https://www.partyspace-next.com/"
@@ -90,6 +92,14 @@ export default function Home() {
             </h3>
             <p className="text-white/50 text-sm mb-4">那覇</p>
             <a
+              href="https://www.partyspace-next.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mb-3 text-sm text-amber-400 hover:underline"
+            >
+              公式サイトを見る →
+            </a><br />
+            <a
               href="https://www.instagram.com/partyspace_next/"
               target="_blank"
               rel="noopener noreferrer"
@@ -101,10 +111,13 @@ export default function Home() {
               </svg>
               Instagram
             </a>
+            </div>
           </div>
 
           {/* 沖縄市 */}
-          <div className="border border-amber-400/20 p-8 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+          <div className="border border-amber-400/20 rounded-2xl bg-white/5 hover:bg-white/10 transition overflow-hidden">
+            <img src="/okinawacity-koza-chatan-mihama-wedding-.jpg" alt="PARTYSPACE NEXTⅡ 沖縄市" className="w-full h-48 object-cover" />
+            <div className="p-8">
             <h3 className="text-xl font-bold mb-1">
               <a
                 href="https://www.partyspace-next2.com/"
@@ -117,6 +130,14 @@ export default function Home() {
             </h3>
             <p className="text-white/50 text-sm mb-4">沖縄市</p>
             <a
+              href="https://www.partyspace-next2.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mb-3 text-sm text-amber-400 hover:underline"
+            >
+              公式サイトを見る →
+            </a><br />
+            <a
               href="https://www.instagram.com/next.okinawacity/"
               target="_blank"
               rel="noopener noreferrer"
@@ -128,6 +149,7 @@ export default function Home() {
               </svg>
               Instagram
             </a>
+            </div>
           </div>
 
         </div>
