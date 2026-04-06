@@ -16,8 +16,12 @@ export default function Services() {
         {serviceCards.map((s) => (
           <div
             key={s.title}
-            className="border border-amber-400/20 p-8 rounded-2xl bg-white/5 hover:bg-white/10 transition group"
+            className="border border-amber-400/20 rounded-2xl bg-white/5 hover:bg-white/10 transition group overflow-hidden"
           >
+            {s.image && (
+              <img src={s.image} alt={s.title} className="w-full h-52 object-cover" />
+            )}
+            <div className="p-8">
             <div className="text-3xl mb-4">{s.icon}</div>
             <h2 className="text-xl font-semibold group-hover:text-amber-400 transition">
               {s.title}
@@ -33,6 +37,7 @@ export default function Services() {
                 ))}
               </ul>
             )}
+            </div>
           </div>
         ))}
       </div>
