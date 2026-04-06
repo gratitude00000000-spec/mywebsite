@@ -5,7 +5,12 @@ export default function Home() {
   return (
     <>
       {/* ヒーロー */}
-      <section className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+      <section
+        className="relative mx-auto max-w-full px-6 py-24 md:py-32 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/strate.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 max-w-7xl mx-auto">
         <p className="text-xs tracking-[0.4em] text-amber-400/70 mb-6 uppercase">
           Okinawa-based Business Group
         </p>
@@ -29,6 +34,7 @@ export default function Home() {
           >
             お問い合わせ
           </Link>
+        </div>
         </div>
       </section>
 
