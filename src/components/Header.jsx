@@ -6,6 +6,7 @@ const navItems = [
   { to: "/about", label: "会社概要" },
   { to: "/services", label: "事業内容" },
   { to: "/blog", label: "ブログ" },
+  { to: "/gallery", label: "ギャラリー" },
   { to: "/contact", label: "お問い合わせ" },
 ];
 
