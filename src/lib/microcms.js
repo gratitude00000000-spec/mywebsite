@@ -1,12 +1,12 @@
-import { createClient } from "microcms-js-sdk";
+const SERVICE_DOMAIN = "gnt0000";
+const API_KEY = import.meta.env.VITE_MICROCMS_API_KEY;
 
-export const client = createClient({
-  serviceDomain: import.meta.env.VITE_MICROCMS_SERVICE_DOMAIN,
-  apiKey: import.meta.env.VITE_MICROCMS_API_KEY,
-});
+const BASE_URL = `https://${SERVICE_DOMAIN}.microcms.io/api/v1`;
+
+const headers = { "X-MICROCMS-API-KEY": API_KEY };
 
 export const getBlogs = () =>
-  client.getList({ endpoint: "blogs", queries: { orders: "-publishedAt" } });
+  fetch(`${BASE_URL}/blogs?orders=-publishedAt`, { headers }).then((r) => r.json());
 
 export const getBlog = (contentId) =>
-  client.getListDetail({ endpoint: "blogs", contentId });
+  fetch(`${BASE_URL}/blogs/${contentId}`, { headers }).then((r) => r.json());
