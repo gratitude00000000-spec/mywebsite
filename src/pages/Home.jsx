@@ -11,7 +11,13 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-7xl mx-auto">
-        <img src="/toumeika-gratitude-logo.PNG" alt="Gratitude logo" className="w-24 md:w-32 mb-6" />
+        <div className="flex items-center gap-5 mb-6">
+          <img src="/toumeika-gratitude-logo.PNG" alt="Gratitude logo" className="w-20 md:w-28" />
+          <div>
+            <p className="text-3xl md:text-4xl font-bold tracking-[0.15em] text-amber-400">Gratitude</p>
+            <p className="text-sm text-white/60 mt-1">株式会社Gratitude -グラティテュード-</p>
+          </div>
+        </div>
         <p className="text-xs tracking-[0.4em] text-amber-400/70 mb-6 uppercase">
           Okinawa-based Business Group
         </p>
