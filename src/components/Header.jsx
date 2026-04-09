@@ -18,8 +18,8 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* ロゴ */}
         <Link to="/" className="flex flex-col leading-tight" onClick={() => setMenuOpen(false)}>
-          <span className="text-xl font-bold tracking-[0.25em] text-amber-400">Gratitude</span>
-          <span className="text-xs text-white/50">株式会社Gratitude -グラティテュード-</span>
+          <span className="text-xl font-bold tracking-[0.25em] text-amber-400" style={{ fontFamily: "'Shippori Mincho', serif" }}>Gratitude</span>
+          <span className="text-xs text-white/50" style={{ fontFamily: "'Shippori Mincho', serif" }}>株式会社Gratitude -グラティテュード-</span>
         </Link>
 
         {/* PCナビ */}
