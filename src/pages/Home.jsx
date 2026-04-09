@@ -46,7 +46,7 @@ export default function Home() {
             <dl className="space-y-4 text-sm">
               <div>
                 <dt className="text-white/50">会社名</dt>
-                <dd className="mt-1 text-base">株式会社Gratitude</dd>
+                <dd className="mt-1 text-base">株式会社Gratitude -グラティテュード-</dd>
               </div>
               <div>
                 <dt className="text-white/50">代表取締役</dt>

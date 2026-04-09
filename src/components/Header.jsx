@@ -19,7 +19,7 @@ export default function Header() {
         {/* ロゴ */}
         <Link to="/" className="flex flex-col leading-tight" onClick={() => setMenuOpen(false)}>
           <span className="text-xl font-bold tracking-[0.25em] text-amber-400">Gratitude</span>
-          <span className="text-xs text-white/50">株式会社Gratitude</span>
+          <span className="text-xs text-white/50">株式会社Gratitude -グラティテュード-</span>
         </Link>
 
         {/* PCナビ */}
