@@ -2,7 +2,7 @@ export const serviceCards = [
   {
     icon: "🍽️",
     title: "飲食事業・パーティー会場運営事業",
-    image: "/パーティー-コザ-オキナワシ-カシキリ.JPEG",
+    image: "/party-koza-okinawasi-kasikiri.JPEG",
     desc: "飲食店運営と、各種パーティー・宴会・貸切利用に対応した会場運営。沖縄の食文化を活かした空間で、記憶に残る体験を提供します。",
     details: [
       "飲食店の企画・運営",
