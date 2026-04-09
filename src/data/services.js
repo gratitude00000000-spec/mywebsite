@@ -13,6 +13,7 @@ export const serviceCards = [
   {
     icon: "🌐",
     title: "グルメサイト運営事業",
+    image: "/toumei-party-yarou-logo-.PNG",
     desc: "店舗とユーザーのマッチングプラットフォーム運営。団体のパーティー会場に特化したサイトを運営しています。",
     details: [
       "マッチングプラットフォームの運営",
