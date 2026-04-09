@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           {/* ブランド */}
           <div>
-            <div className="text-xl font-bold tracking-[0.25em] text-amber-400">GRATITUDE</div>
+            <div className="text-xl font-bold tracking-[0.25em] text-amber-400">Gratitude</div>
             <div className="text-sm text-white/50 mt-1">株式会社Gratitude -グラティテュード-</div>
             <p className="mt-3 text-sm text-white/40 max-w-xs">
               価値を創り、事業を加速させる。
