@@ -90,7 +90,7 @@ export default function Home() {
       {/* イベント会場運営部門 */}
       <section className="mx-auto max-w-7xl px-6 pb-24">
         <p className="text-xs tracking-[0.4em] text-amber-400/70 uppercase mb-4">Venue Management</p>
-        <h2 className="text-3xl font-bold text-amber-400 mb-2">イベント会場運営部門</h2>
+        <h2 className="text-3xl font-bold text-amber-400 mb-2" style={{ fontFamily: "'Shippori Mincho', serif" }}>イベント会場運営部門</h2>
         <p className="text-white/60 mb-8 text-sm">直営パーティー会場案内</p>
         <div className="grid md:grid-cols-2 gap-6">
 
@@ -98,7 +98,7 @@ export default function Home() {
           <div className="border border-amber-400/20 rounded-2xl bg-white/5 hover:bg-white/10 transition overflow-hidden">
             <img src="/naha-wedding-kokusaistreet-.JPG" alt="PARTYSPACE NEXT那覇" className="w-full h-48 object-cover" />
             <div className="p-8">
-            <h3 className="text-xl font-bold mb-1">
+            <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "'Shippori Mincho', serif" }}>
               <a
                 href="https://www.partyspace-next.com/"
                 target="_blank"
@@ -136,7 +136,7 @@ export default function Home() {
           <div className="border border-amber-400/20 rounded-2xl bg-white/5 hover:bg-white/10 transition overflow-hidden">
             <img src="/okinawacity-koza-chatan-mihama-wedding-.jpg" alt="PARTYSPACE NEXTⅡ 沖縄市" className="w-full h-48 object-cover" />
             <div className="p-8">
-            <h3 className="text-xl font-bold mb-1">
+            <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "'Shippori Mincho', serif" }}>
               <a
                 href="https://www.partyspace-next2.com/"
                 target="_blank"
