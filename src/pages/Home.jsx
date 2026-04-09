@@ -79,7 +79,7 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 pb-24">
         <p className="text-xs tracking-[0.4em] text-amber-400/70 uppercase mb-4">Venue Management</p>
         <h2 className="text-3xl font-bold text-amber-400 mb-2">イベント会場運営部門</h2>
-        <p className="text-white/60 mb-8 text-sm">直営のパーティー会場を運営しています。</p>
+        <p className="text-white/60 mb-8 text-sm">直営パーティー会場案内</p>
         <div className="grid md:grid-cols-2 gap-6">
 
           {/* 那覇 */}
