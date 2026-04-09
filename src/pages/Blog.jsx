@@ -40,7 +40,7 @@ export default function Blog() {
                 </span>
                 {post.category && (
                   <span className="text-xs border border-amber-400/40 text-amber-400 px-2 py-0.5 rounded-full">
-                    {post.category}
+                    {typeof post.category === "string" ? post.category : post.category.name}
                   </span>
                 )}
               </div>
