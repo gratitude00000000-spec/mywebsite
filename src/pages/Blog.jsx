@@ -8,7 +8,7 @@ export default function Blog() {
 
   useEffect(() => {
     getBlogs()
-      .then((data) => setPosts(data.contents))
+      .then((data) => setPosts(data.contents ?? []))
       .catch(() => setPosts([]))
       .finally(() => setLoading(false));
   }, []);
