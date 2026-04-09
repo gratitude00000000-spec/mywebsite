@@ -1,13 +1,26 @@
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { blogPosts } from "../data/blogPosts";
+import { getBlog } from "../lib/microcms";
 
 export default function BlogPost() {
   const { slug } = useParams();
-  // CMS連携時はslugを使ってAPIからデータを取得する
-  // const [post, setPost] = useState(null);
-  // useEffect(() => { fetch(`/api/posts/${slug}`).then(...).then(setPost); }, [slug]);
+  const [post, setPost] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const post = blogPosts.find((p) => p.slug === slug);
+  useEffect(() => {
+    getBlog(slug)
+      .then(setPost)
+      .catch(() => setPost(null))
+      .finally(() => setLoading(false));
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <section className="mx-auto max-w-3xl px-6 py-20 text-center">
+        <p className="text-white/60">読み込み中...</p>
+      </section>
+    );
+  }
 
   if (!post) {
     return (
@@ -27,7 +40,9 @@ export default function BlogPost() {
       </Link>
 
       <div className="flex items-center gap-3 mt-6 mb-4">
-        <span className="text-xs text-white/50">{post.date}</span>
+        <span className="text-xs text-white/50">
+          {new Date(post.publishedAt).toLocaleDateString("ja-JP")}
+        </span>
         {post.category && (
           <span className="text-xs border border-amber-400/40 text-amber-400 px-2 py-0.5 rounded-full">
             {post.category}
@@ -37,12 +52,11 @@ export default function BlogPost() {
 
       <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-8">{post.title}</h1>
 
-      {/* CMS連携時はpost.contentをHTMLとして描画（dangerouslySetInnerHTML or MDX） */}
       <div className="prose prose-invert max-w-none text-white/80 leading-8 space-y-4">
         {post.content ? (
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         ) : (
-          <p className="text-white/60">{post.excerpt}</p>
+          post.excerpt && <p className="text-white/60">{post.excerpt}</p>
         )}
       </div>
     </article>
