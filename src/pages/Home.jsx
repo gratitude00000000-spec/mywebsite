@@ -11,7 +11,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-7xl mx-auto">
-        <img src="/gratitude-logo.JPG" alt="Gratitude logo" className="w-24 md:w-32 mb-6 rounded-lg" />
+        <img src="/gratitude-logo.JPG" alt="Gratitude logo" className="w-24 md:w-32 mb-6 mix-blend-screen" />
         <p className="text-xs tracking-[0.4em] text-amber-400/70 mb-6 uppercase">
           Okinawa-based Business Group
         </p>
