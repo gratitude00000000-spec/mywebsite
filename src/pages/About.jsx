@@ -28,9 +28,9 @@ export default function About() {
 
       {/* 企業理念 */}
       <div className="border border-amber-400/20 rounded-2xl p-8 bg-white/5 mb-12">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-6 mb-4">
           <h2 className="text-sm tracking-widest text-amber-400 uppercase">Mission</h2>
-          <img src="/toumeika-gratitude-logo.PNG" alt="Gratitude logo" className="w-16 opacity-80" />
+          <img src="/toumeika-gratitude-logo.PNG" alt="Gratitude logo" className="w-24 opacity-80" />
         </div>
         <p className="text-2xl font-semibold leading-relaxed">
           「感謝」を事業の中心に置き、
