@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 export default function App() {
   return (
@@ -15,8 +16,8 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="blog/:slug" element={<BlogPost />} />
+        <Route path="blog" element={<ErrorBoundary><Blog /></ErrorBoundary>} />
+        <Route path="blog/:slug" element={<ErrorBoundary><BlogPost /></ErrorBoundary>} />
         <Route path="contact" element={<Contact />} />
         <Route path="gallery" element={<Gallery />} />
       </Route>

@@ -8,8 +8,14 @@ export default function Blog() {
 
   useEffect(() => {
     getBlogs()
-      .then((data) => setPosts(data.contents ?? []))
-      .catch(() => setPosts([]))
+      .then((data) => {
+        console.log("microCMS response:", JSON.stringify(data));
+        setPosts(data.contents ?? []);
+      })
+      .catch((err) => {
+        console.log("microCMS error:", err);
+        setPosts([]);
+      })
       .finally(() => setLoading(false));
   }, []);
 
