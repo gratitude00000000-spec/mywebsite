@@ -46,7 +46,7 @@ export default function Home() {
             <dl className="space-y-4 text-sm">
               <div>
                 <dt className="text-white/50">会社名</dt>
-                <dd className="mt-1 text-base">株式会社Gratitude</dd>
+                <dd className="mt-1 text-base">株式会社Gratitude -グラティテュード-</dd>
               </div>
               <div>
                 <dt className="text-white/50">代表取締役</dt>
@@ -162,8 +162,13 @@ export default function Home() {
       </section>
 
       {/* 事業内容プレビュー */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
-        <h2 className="text-3xl font-bold text-amber-400 mb-8">事業内容</h2>
+      <section
+        className="relative px-6 pb-24 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/gratitude-hp-jigyounaiyou-.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 mx-auto max-w-7xl">
+        <h2 className="text-3xl font-bold text-amber-400 mb-8 pt-24">事業内容</h2>
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {serviceCards.map((s) => (
             <div
@@ -182,6 +187,7 @@ export default function Home() {
           >
             すべての事業内容を見る →
           </Link>
+        </div>
         </div>
       </section>
     </>

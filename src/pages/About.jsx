@@ -1,5 +1,5 @@
 const companyInfo = [
-  { label: "会社名", value: "株式会社Gratitude" },
+  { label: "会社名", value: "株式会社Gratitude -グラティテュード-" },
   { label: "代表取締役", value: "諸見里 楓摩" },
   { label: "設立", value: "2020年" },
   { label: "所在地", value: "沖縄県那覇市牧志2-18-4 パレットマキシ2-C" },

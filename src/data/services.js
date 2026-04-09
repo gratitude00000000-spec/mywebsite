@@ -23,6 +23,7 @@ export const serviceCards = [
   {
     icon: "📈",
     title: "Webマーケティング事業",
+    image: "/llomo-meo-seo-webmarketing-.png",
     desc: "最新AI活用による、集客導線の設計から分析・改善まで一貫して支援。MEO対策、LLMO対策等、最新のトレンド重視のマーケティングを提供します。",
     details: [
       "MEO、google map対策、コンサルティング、運用代行",
@@ -32,6 +33,7 @@ export const serviceCards = [
   {
     icon: "👥",
     title: "人材採用コンサルティング",
+    image: "/recruit-consulting-.png",
     desc: "採用戦略の立案から人材確保まで最適化を支援。採用コストの削減と定着率向上を両立するプランを提案します。",
     details: [
       "採用戦略の立案・実行支援",

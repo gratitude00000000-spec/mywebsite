@@ -16,7 +16,7 @@ export default function Footer() {
           {/* ブランド */}
           <div>
             <div className="text-xl font-bold tracking-[0.25em] text-amber-400">GRATITUDE</div>
-            <div className="text-sm text-white/50 mt-1">株式会社Gratitude</div>
+            <div className="text-sm text-white/50 mt-1">株式会社Gratitude -グラティテュード-</div>
             <p className="mt-3 text-sm text-white/40 max-w-xs">
               価値を創り、事業を加速させる。
             </p>
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-amber-400/10 text-center text-white/30 text-sm">
-          © {new Date().getFullYear()} 株式会社Gratitude. All rights reserved.
+          © {new Date().getFullYear()} 株式会社Gratitude -グラティテュード-. All rights reserved.
         </div>
       </div>
     </footer>
