@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex items-center gap-5 mb-6">
           <img src="/toumeika-gratitude-logo.PNG" alt="Gratitude logo" className="w-20 md:w-28" />
           <div>
-            <p className="text-3xl md:text-4xl font-bold tracking-[0.15em] text-amber-400">Gratitude</p>
+            <p className="text-3xl md:text-4xl tracking-[0.15em] text-amber-400" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>Gratitude</p>
             <p className="text-sm text-white/60 mt-1">株式会社Gratitude -グラティテュード-</p>
           </div>
         </div>
