@@ -26,7 +26,7 @@ export default function Home() {
         <p className="text-xs tracking-[0.4em] text-amber-400/70 mb-6 uppercase">
           Okinawa-based Business Group
         </p>
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+        <h1 className="text-5xl md:text-7xl leading-tight" style={{ fontFamily: "'Shippori Mincho', serif", fontWeight: 700 }}>
           創造する
         </h1>
         <p className="mt-6 max-w-xl text-white/60 leading-8">
