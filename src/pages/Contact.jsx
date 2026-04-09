@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const INITIAL = { name: "", company: "", email: "", tel: "", subject: "", message: "" };
 
 export default function Contact() {
   const [form, setForm] = useState(INITIAL);
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [status, setStatus] = useState("idle");
+
+  useEffect(() => {
+    document.title = "お問い合わせ | 株式会社Gratitude";
+  }, []); // idle | sending | success | error
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));

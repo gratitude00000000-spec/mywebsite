@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function Gallery() {
+  useEffect(() => {
+    document.title = "フォトギャラリー | 株式会社Gratitude";
+  }, []);
   const photos = [
     { src: "/IMG_3648.png", alt: "ギャラリー写真" },
   ];
