@@ -32,13 +32,13 @@ export default function About() {
           <h2 className="text-sm tracking-widest text-amber-400 uppercase">Mission</h2>
           <img src="/toumeika-gratitude-logo.PNG" alt="Gratitude logo" className="w-24 opacity-80" />
         </div>
-        <p className="text-2xl font-semibold leading-relaxed">
-          「感謝」を事業の中心に置き、
+        <p className="text-2xl font-semibold leading-relaxed" style={{ fontFamily: "'Shippori Mincho', serif" }}>
+          「<span className="text-amber-400">感謝</span>」を事業の中心に置き、
           <br />
           関わる人すべての価値を高める。
         </p>
-        <p className="mt-4 text-white/60 leading-8">
-          Gratitude、直訳で感謝。感謝の返し方は人それぞれだが、関わった人たちにここまでこれた事に感謝を忘れない。それが私たちのモットーです。
+        <p className="mt-4 text-white/60 leading-8" style={{ fontFamily: "'Shippori Mincho', serif" }}>
+          <span className="text-amber-400">Gratitude</span>、直訳で<span className="text-amber-400">感謝</span>。感謝の返し方は人それぞれだが、関わった人たちにここまでこれた事に<span className="text-amber-400">感謝</span>を忘れない。それが私たちの<span className="text-amber-400">モットー</span>です。
         </p>
       </div>
 
