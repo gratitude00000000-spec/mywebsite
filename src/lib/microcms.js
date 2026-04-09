@@ -1,5 +1,5 @@
 const SERVICE_DOMAIN = "gnt0000";
-const API_KEY = import.meta.env.VITE_MICROCMS_API_KEY;
+const API_KEY = import.meta.env.VITE_MICROCMS_API_KEY || "wgWbtwUpJF2QKftUkfREnmfTLTKSqQmQCZVz";
 
 const BASE_URL = `https://${SERVICE_DOMAIN}.microcms.io/api/v1`;
 
