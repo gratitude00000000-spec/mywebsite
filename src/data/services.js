@@ -2,7 +2,7 @@ export const serviceCards = [
   {
     icon: "🍽️",
     title: "飲食事業・パーティー会場運営事業",
-    image: "/パーティー-コザ-オキナワシ-カシキリ.JPEG",
+    image: "/party-koza-okinawasi-kasikiri.JPEG",
     desc: "飲食店運営と、各種パーティー・宴会・貸切利用に対応した会場運営。沖縄の食文化を活かした空間で、記憶に残る体験を提供します。",
     details: [
       "飲食店の企画・運営",
@@ -23,7 +23,7 @@ export const serviceCards = [
   {
     icon: "📈",
     title: "Webマーケティング事業",
-    desc: "最新AI活用による、集客導線の設計から分析・改善まで一貫して支援。MEO対策、SNS運用を組み合わせた成果重視のマーケティングを提供します。",
+    desc: "最新AI活用による、集客導線の設計から分析・改善まで一貫して支援。MEO対策、LLMO対策等、最新のトレンド重視のマーケティングを提供します。",
     details: [
       "MEO、google map対策、コンサルティング、運用代行",
       "ホームページ、ランディングページ制作",
