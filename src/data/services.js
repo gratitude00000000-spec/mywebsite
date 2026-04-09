@@ -33,6 +33,7 @@ export const serviceCards = [
   {
     icon: "👥",
     title: "人材採用コンサルティング",
+    image: "/recruit-consulting-.png",
     desc: "採用戦略の立案から人材確保まで最適化を支援。採用コストの削減と定着率向上を両立するプランを提案します。",
     details: [
       "採用戦略の立案・実行支援",
