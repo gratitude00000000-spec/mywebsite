@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { serviceCards } from "../data/services";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "沖縄のWebマーケティング・MEO・LLMO対策 | 株式会社Gratitude";
+  }, []);
+
   return (
     <>
       {/* ヒーロー */}

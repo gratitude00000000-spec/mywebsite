@@ -7,6 +7,10 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "ブログ・お知らせ | 株式会社Gratitude";
+  }, []);
+
+  useEffect(() => {
     getBlogs()
       .then((data) => {
         console.log("microCMS response:", JSON.stringify(data));

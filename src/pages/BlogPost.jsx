@@ -9,7 +9,10 @@ export default function BlogPost() {
 
   useEffect(() => {
     getBlog(slug)
-      .then(setPost)
+      .then((data) => {
+        setPost(data);
+        if (data?.title) document.title = `${data.title} | 株式会社Gratitude`;
+      })
       .catch(() => setPost(null))
       .finally(() => setLoading(false));
   }, [slug]);

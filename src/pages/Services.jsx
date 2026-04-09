@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { serviceCards } from "../data/services";
 
 export default function Services() {
+  useEffect(() => {
+    document.title = "事業内容 | Webマーケティング・MEO・飲食・採用支援 | 株式会社Gratitude";
+  }, []);
+
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
       <p className="text-xs tracking-[0.4em] text-amber-400/70 uppercase mb-4">Our Services</p>

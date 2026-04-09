@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const companyInfo = [
   { label: "会社名", value: "株式会社Gratitude -グラティテュード-" },
   { label: "代表取締役", value: "諸見里 楓摩" },
@@ -12,6 +14,10 @@ const companyInfo = [
 ];
 
 export default function About() {
+  useEffect(() => {
+    document.title = "会社概要 | 株式会社Gratitude -グラティテュード-";
+  }, []);
+
   return (
     <section className="mx-auto max-w-5xl px-6 py-20">
       {/* タイトル */}
