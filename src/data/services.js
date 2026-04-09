@@ -23,6 +23,7 @@ export const serviceCards = [
   {
     icon: "📈",
     title: "Webマーケティング事業",
+    image: "/llomo-meo-seo-webmarketing-.png",
     desc: "最新AI活用による、集客導線の設計から分析・改善まで一貫して支援。MEO対策、LLMO対策等、最新のトレンド重視のマーケティングを提供します。",
     details: [
       "MEO、google map対策、コンサルティング、運用代行",
