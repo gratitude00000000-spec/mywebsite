@@ -73,9 +73,12 @@ export default function About() {
         <p className="text-xs tracking-[0.4em] text-amber-400/70 uppercase mb-4">Profile</p>
         <h2 className="text-2xl font-bold mb-8">代表<span className="text-amber-400">プロフィール</span></h2>
         <div className="border border-amber-400/20 rounded-2xl p-8 bg-white/5">
-          <div className="mb-6">
-            <p className="text-lg font-semibold">諸見里 楓摩</p>
-            <p className="text-sm text-amber-400/80 mt-1">株式会社Gratitude 代表取締役</p>
+          <div className="flex items-center gap-6 mb-6">
+            <img src="/kuma.png" alt="諸見里 楓摩" className="w-20 h-20 rounded-full object-cover border border-amber-400/30" />
+            <div>
+              <p className="text-lg font-semibold">諸見里 楓摩</p>
+              <p className="text-sm text-amber-400/80 mt-1">株式会社Gratitude 代表取締役</p>
+            </div>
           </div>
           <div className="space-y-5 text-sm text-white/70 leading-8">
             <p>沖縄県南城市玉城に生まれ、幼少期より糸満市で育つ。父親のいない環境の中で生活し、決して裕福とは言えない環境で幼少期を過ごす。</p>
