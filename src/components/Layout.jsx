@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import ChatBot from "./ChatBot";
 
 export default function Layout() {
   const { pathname } = useLocation();
@@ -18,6 +19,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 }
