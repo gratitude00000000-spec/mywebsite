@@ -50,9 +50,16 @@
 
     h1 {
       font-size: clamp(34px, 6vw, 62px);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
+      line-height: 1.28;
+      letter-spacing: -0.02em;
       font-weight: 800;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* PC：改行あり / スマホ：自然な折り返し */
+    @media (max-width: 960px) {
+      .h1-br { display: none; }
     }
 
     h2 {
@@ -407,7 +414,7 @@
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">全国・全業種対応 / AI時代の集客支援</span>
-        <h1>AIに選ばれる時代の<br>集客設計を、<br>株式会社Gratitudeが支援します。</h1>
+        <h1>AIに選ばれる時代の<br class="h1-br">集客設計を、<br class="h1-br">株式会社Gratitudeが支援します。</h1>
         <p class="lead">
           現在は、ただ検索に出るだけでは足りない時代です。Googleビジネスプロフィールの最適化はもちろん、
           AIO、LLMO、AEO、MEOまで見据えた最新AI活用型の集客支援で、店舗・企業・サービスの見つかり方と選ばれ方を整えます。
