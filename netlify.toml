@@ -2,12 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-# lp.html はそのまま配信
-[[redirects]]
-  from = "/lp.html"
-  to = "/lp.html"
-  status = 200
-
 # React Router の SPA ルーティング対応
 [[redirects]]
   from = "/*"
