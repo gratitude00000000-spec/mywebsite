@@ -189,6 +189,18 @@ export default function Home() {
             >
               <h3 className="font-semibold text-base">{s.title}</h3>
               <p className="mt-3 text-sm text-white/60">{s.desc}</p>
+              {s.isAiMarketing && (
+                <a
+                  href="https://ai-marketing-japan.jp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 text-white text-sm px-5 py-2.5 rounded-full font-bold hover:opacity-90 transition"
+                  style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                >
+                  <img src="/ai-llmo-aio-aeo-webmarketing-.png" alt="AI集客ドットコム" className="h-5 w-auto" />
+                  AI集客ドットコム
+                </a>
+              )}
             </div>
           ))}
         </div>
