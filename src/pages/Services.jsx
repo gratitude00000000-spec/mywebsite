@@ -1,11 +1,20 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { serviceCards } from "../data/services";
 
 export default function Services() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "事業内容 | Webマーケティング・MEO・飲食・採用支援 | 株式会社Gratitude";
   }, []);
+
+  const goToAiMarketing = () => {
+    navigate('/');
+    setTimeout(() => {
+      document.getElementById('ai-marketing')?.scrollIntoView({ behavior: 'smooth' });
+    }, 200);
+  };
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
@@ -28,9 +37,21 @@ export default function Services() {
             )}
             <div className="p-8">
             <div className="text-3xl mb-4">{s.icon}</div>
-            <h2 className="text-xl font-semibold group-hover:text-amber-400 transition">
-              {s.title}
-            </h2>
+            <div className="flex flex-wrap items-center gap-3 mb-1">
+              <h2 className="text-xl font-semibold text-amber-400">
+                {s.title}
+              </h2>
+              {s.isAiMarketing && (
+                <button
+                  onClick={goToAiMarketing}
+                  className="flex items-center gap-1.5 text-white text-xs px-3 py-1.5 rounded-full font-bold hover:opacity-90 transition"
+                  style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                >
+                  <img src="/ai-llmo-aio-aeo-webmarketing-.png" alt="AI集客ドットコム" className="h-4 w-auto" />
+                  AI集客ドットコム
+                </button>
+              )}
+            </div>
             <p className="mt-3 text-white/60 leading-7">{s.desc}</p>
             {s.details && (
               <ul className="mt-4 space-y-1">

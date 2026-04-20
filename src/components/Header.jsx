@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { to: "/", label: "ホーム" },
@@ -12,6 +12,21 @@ const navItems = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToAiMarketing = (e) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    if (location.pathname === '/') {
+      document.getElementById('ai-marketing')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById('ai-marketing')?.scrollIntoView({ behavior: 'smooth' });
+      }, 200);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-amber-400/20 bg-black/90 backdrop-blur">
@@ -23,7 +38,7 @@ export default function Header() {
         </Link>
 
         {/* PCナビ */}
-        <nav className="hidden md:flex gap-2">
+        <nav className="hidden md:flex gap-2 items-center">
           {navItems.map(({ to, label }) => (
             <NavLink
               key={to}
@@ -40,6 +55,15 @@ export default function Header() {
               {label}
             </NavLink>
           ))}
+          <a
+            href="/#ai-marketing"
+            onClick={scrollToAiMarketing}
+            className="flex items-center gap-1.5 px-4 py-2 text-sm rounded-full font-semibold text-white transition"
+            style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+          >
+            <img src="/ai-llmo-aio-aeo-webmarketing-.png" alt="" className="h-4 w-auto" />
+            AIマーケティング
+          </a>
         </nav>
 
         {/* ハンバーガーメニュー（スマホ） */}
@@ -86,6 +110,15 @@ export default function Header() {
               {label}
             </NavLink>
           ))}
+          <a
+            href="/#ai-marketing"
+            onClick={scrollToAiMarketing}
+            className="flex items-center gap-2 px-4 py-3 text-sm rounded-lg font-semibold text-white transition"
+            style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+          >
+            <img src="/ai-llmo-aio-aeo-webmarketing-.png" alt="" className="h-5 w-auto" />
+            AIマーケティング
+          </a>
         </nav>
       )}
     </header>
