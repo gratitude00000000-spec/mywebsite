@@ -5,11 +5,6 @@ import { serviceCards } from "../data/services";
 export default function Home() {
   useEffect(() => {
     document.title = "沖縄のWebマーケティング・MEO・LLMO対策 | 株式会社Gratitude";
-    if (window.location.hash === '#ai-marketing') {
-      setTimeout(() => {
-        document.getElementById('ai-marketing')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
   }, []);
 
   return (
@@ -192,35 +187,8 @@ export default function Home() {
               key={s.title}
               className="border border-amber-400/20 p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition"
             >
-              <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h3 className="font-semibold text-base text-amber-400">{s.title}</h3>
-                {s.isAiMarketing && (
-                  <button
-                    onClick={() => document.getElementById('ai-marketing')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs px-2.5 py-1 rounded-full font-semibold hover:opacity-90 transition"
-                  >
-                    <img src="/ai-llmo-aio-aeo-webmarketing-.png" alt="AI集客ドットコム" className="h-4 w-auto" />
-                    AI集客ドットコム
-                  </button>
-                )}
-              </div>
-              <p className="mt-2 text-sm text-white/60">{s.desc}</p>
-              {s.isAiMarketing && s.details && (
-                <ul className="mt-3 space-y-1">
-                  {s.details.map((d) => (
-                    <li key={d}>
-                      <a
-                        href="#ai-marketing"
-                        onClick={(e) => { e.preventDefault(); document.getElementById('ai-marketing')?.scrollIntoView({ behavior: 'smooth' }); }}
-                        className="flex items-start gap-2 text-sm text-blue-400 hover:text-blue-300 hover:underline transition"
-                      >
-                        <span className="text-amber-400 mt-0.5 shrink-0">▸</span>
-                        {d}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <h3 className="font-semibold text-base">{s.title}</h3>
+              <p className="mt-3 text-sm text-white/60">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -233,15 +201,6 @@ export default function Home() {
           </Link>
         </div>
         </div>
-      </section>
-
-      {/* AI集客ドットコム LP（iframe埋め込み） */}
-      <section id="ai-marketing">
-        <iframe
-          src="https://ai-marketing-japan.jp"
-          title="AI集客ドットコム"
-          style={{ display: 'block', width: '100%', height: '3200px', border: 'none' }}
-        />
       </section>
     </>
   );
