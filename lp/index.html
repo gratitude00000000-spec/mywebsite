@@ -659,7 +659,7 @@
     <div>
       <div class="cta-box">
         <div class="cta-box-title">まずはお気軽にご連絡ください</div>
-        <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:16px;">
+        <form id="contact-form" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:16px;">
           <input type="hidden" name="form-name" value="contact" />
           <p style="display:none"><label>Bot field: <input name="bot-field" /></label></p>
 
@@ -737,5 +737,31 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+    var data = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(function(res) {
+      form.innerHTML = '<div style="text-align:center;padding:32px 16px"><div style="font-size:48px;margin-bottom:16px">✅</div><p style="font-size:17px;font-weight:800;color:#fff;margin-bottom:10px">送信しました！</p><p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.8">お問い合わせありがとうございます。<br>通常2営業日以内にご返信いたします。</p></div>';
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = '無料相談を申し込む →';
+      alert('送信に失敗しました。\nお手数ですが直接メール（gratitude00000000@gmail.com）またはお電話（098-975-5682）にてご連絡ください。');
+    });
+  });
+})();
+</script>
 </body>
 </html>
