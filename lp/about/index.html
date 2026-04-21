@@ -41,23 +41,6 @@
     .btn-gold:hover{transform:translateY(-2px)}
     .btn-sm{min-height:40px;padding:0 18px;font-size:13px;border-radius:10px}
 
-    /* HAMBURGER */
-    .hamburger-btn{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;flex-shrink:0}
-    .hamburger-btn span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
-    .hamburger-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .hamburger-btn.open span:nth-child(2){opacity:0}
-    .hamburger-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .company-drawer{position:fixed;top:0;right:-320px;width:300px;height:100vh;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.12);z-index:999;transition:right .3s ease;padding:60px 24px 24px;overflow-y:auto}
-    .company-drawer.open{right:0}
-    .company-drawer h3{font-size:14px;font-weight:800;color:var(--navy);letter-spacing:.1em;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--blue)}
-    .company-table{width:100%;border-collapse:collapse}
-    .company-table tr{border-bottom:1px solid var(--g200)}
-    .company-table th{font-size:11px;font-weight:700;color:var(--g500);padding:12px 8px 12px 0;vertical-align:top;white-space:nowrap;width:80px}
-    .company-table td{font-size:13px;color:var(--text);padding:12px 0;line-height:1.6}
-    .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998;display:none}
-    .drawer-overlay.open{display:block}
-    .drawer-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--g500)}
-
     /* PAGE HERO */
     .page-hero{background:linear-gradient(135deg,#060f20 0%,#0d2044 50%,#091830 100%);color:#fff;padding:52px 0 44px}
     .page-hero h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin:10px 0 8px}
@@ -129,26 +112,8 @@
       </a>
       <a class="btn btn-gold btn-sm" href="tel:0989755682">📞 098-975-5682</a>
     </div>
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="会社情報メニュー">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </header>
-
-<!-- ドロワー -->
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="company-drawer" id="companyDrawer">
-  <button class="drawer-close" id="drawerClose">✕</button>
-  <h3>会社情報</h3>
-  <table class="company-table">
-    <tr><th>会社名</th><td>株式会社Gratitude<br>-グラティテュード-</td></tr>
-    <tr><th>代表取締役</th><td>諸見里 楓摩</td></tr>
-    <tr><th>所在地</th><td>沖縄県那覇市牧志2-18-4<br>パレットマキシ2-C</td></tr>
-    <tr><th>TEL</th><td><a href="tel:0989755682" style="color:var(--blue)">098-975-5682</a></td></tr>
-    <tr><th>事業内容</th><td>飲食事業・パーティー会場運営 / グルメサイト運営 / Webマーケティング / 人材採用コンサルティング</td></tr>
-  </table>
-</div>
-
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="wrap">
@@ -283,16 +248,5 @@
   </div>
 </footer>
 
-<script>
-  const btn = document.getElementById('hamburgerBtn');
-  const drawer = document.getElementById('companyDrawer');
-  const overlay = document.getElementById('drawerOverlay');
-  const close = document.getElementById('drawerClose');
-  function openDrawer(){btn.classList.add('open');drawer.classList.add('open');overlay.classList.add('open');}
-  function closeDrawer(){btn.classList.remove('open');drawer.classList.remove('open');overlay.classList.remove('open');}
-  btn.addEventListener('click', ()=> drawer.classList.contains('open') ? closeDrawer() : openDrawer());
-  overlay.addEventListener('click', closeDrawer);
-  close.addEventListener('click', closeDrawer);
-</script>
 </body>
 </html>
