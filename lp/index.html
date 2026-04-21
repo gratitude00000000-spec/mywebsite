@@ -204,6 +204,36 @@
     .cta-phone:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,99,235,.38)}
     .cta-note{text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin-top:12px}
 
+    /* ════════════════ FORM ════════════════ */
+    .form-box{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:32px}
+    .form-box-title{font-size:13px;font-weight:700;color:rgba(255,255,255,.65);text-align:center;margin-bottom:22px;letter-spacing:.06em}
+    .form-group{margin-bottom:16px}
+    .form-label{display:block;font-size:13px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:6px}
+    .form-label .req{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+    .form-input,.form-textarea{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 14px;font-size:14px;color:#fff;font-family:inherit;transition:.2s;outline:none}
+    .form-input::placeholder,.form-textarea::placeholder{color:rgba(255,255,255,.4)}
+    .form-input:focus,.form-textarea:focus{background:rgba(255,255,255,.15);border-color:rgba(99,179,237,.6);box-shadow:0 0 0 3px rgba(37,99,235,.2)}
+    .form-textarea{resize:vertical;min-height:90px;line-height:1.6}
+
+    /* Radio cards */
+    .radio-group{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+    .radio-card{position:relative}
+    .radio-card input[type="radio"]{position:absolute;opacity:0;width:0;height:0}
+    .radio-card label{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:12px;padding:13px 16px;cursor:pointer;font-size:14px;color:rgba(255,255,255,.85);transition:.2s;line-height:1.4;-webkit-user-select:none;user-select:none}
+    .radio-card label:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
+    .radio-card input[type="radio"]:checked + label{background:rgba(37,99,235,.22);border-color:rgba(99,179,237,.7);color:#fff;box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+    .radio-dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.2s}
+    .radio-card input[type="radio"]:checked + label .radio-dot{border-color:#63b3ed;background:linear-gradient(135deg,var(--blue),var(--purple))}
+    .radio-card input[type="radio"]:checked + label .radio-dot::after{content:'';width:6px;height:6px;background:#fff;border-radius:50%}
+
+    /* Submit */
+    .form-submit{width:100%;margin-top:6px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;border-radius:12px;padding:16px;font-size:16px;font-weight:800;cursor:pointer;transition:.2s;font-family:inherit;letter-spacing:.02em}
+    .form-submit:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,99,235,.4)}
+    .form-note{text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin-top:10px}
+    .form-divider{display:flex;align-items:center;gap:10px;margin:16px 0}
+    .form-divider::before,.form-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15)}
+    .form-divider span{font-size:12px;color:rgba(255,255,255,.45);white-space:nowrap}
+
     /* ════════════════ FOOTER ════════════════ */
     footer{background:var(--navy);padding:30px 0;text-align:center;color:rgba(255,255,255,.45);font-size:13px}
 
@@ -629,10 +659,67 @@
     <div>
       <div class="cta-box">
         <div class="cta-box-title">まずはお気軽にご連絡ください</div>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:16px;">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none"><label>Bot field: <input name="bot-field" /></label></p>
+
+          <div>
+            <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:10px;letter-spacing:.04em">現在のご状況に近いものをお選びください <span style="color:#f87171;font-size:11px;margin-left:4px">必須</span></p>
+            <div class="radio-group">
+              <div class="radio-card">
+                <input type="radio" id="r1" name="situation" value="AIを活用した集客に興味がある" required />
+                <label for="r1">
+                  <span class="radio-dot"></span>
+                  AIを活用した集客に興味がある
+                </label>
+              </div>
+              <div class="radio-card">
+                <input type="radio" id="r2" name="situation" value="他社サービスと比較・検討している" />
+                <label for="r2">
+                  <span class="radio-dot"></span>
+                  他社サービスと比較・検討している
+                </label>
+              </div>
+              <div class="radio-card">
+                <input type="radio" id="r3" name="situation" value="自社に合うか相談・提案を受けたい" />
+                <label for="r3">
+                  <span class="radio-dot"></span>
+                  自社に合うか相談・提案を受けたい
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em">お名前 <span style="color:#f87171;font-size:11px;margin-left:4px">必須</span></label>
+            <input type="text" name="name" required placeholder="山田 太郎" style="background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;outline:none;transition:.2s;" onfocus="this.style.borderColor='rgba(99,179,237,.7)'" onblur="this.style.borderColor='rgba(255,255,255,.18)'" />
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em">メールアドレス <span style="color:#f87171;font-size:11px;margin-left:4px">必須</span></label>
+            <input type="email" name="email" required placeholder="example@gmail.com" style="background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;outline:none;transition:.2s;" onfocus="this.style.borderColor='rgba(99,179,237,.7)'" onblur="this.style.borderColor='rgba(255,255,255,.18)'" />
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em">ご質問・ご要望</label>
+            <textarea name="message" rows="4" placeholder="お気軽にご記入ください" style="background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;outline:none;transition:.2s;resize:vertical;" onfocus="this.style.borderColor='rgba(99,179,237,.7)'" onblur="this.style.borderColor='rgba(255,255,255,.18)'"></textarea>
+          </div>
+
+          <button type="submit" style="background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;border-radius:12px;padding:15px;font-size:16px;font-weight:800;cursor:pointer;transition:.2s;letter-spacing:.06em;" onmouseover="this.style.opacity='.88';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+            無料相談を申し込む →
+          </button>
+        </form>
+
+        <div style="display:flex;align-items:center;gap:10px;margin:20px 0 16px;color:rgba(255,255,255,.3);font-size:12px;">
+          <div style="flex:1;height:1px;background:rgba(255,255,255,.12)"></div>
+          <span>または直接ご連絡ください</span>
+          <div style="flex:1;height:1px;background:rgba(255,255,255,.12)"></div>
+        </div>
+
         <a class="cta-mail" href="mailto:gratitude00000000@gmail.com?subject=集客支援について相談したい">
           ✉ gratitude00000000@gmail.com
         </a>
-        <a class="cta-phone" href="tel:0989755682">
+        <a class="cta-phone" href="tel:0989755682" style="margin-top:10px;">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           098-975-5682
         </a>
