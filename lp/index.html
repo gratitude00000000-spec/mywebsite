@@ -180,11 +180,15 @@
     .plan-note{margin-top:20px;padding:12px 16px;background:rgba(37,99,235,.06);border-left:3px solid var(--blue);border-radius:6px;font-size:13px;color:#1e40af;line-height:1.6}
 
     /* ════════════════ FAQ ════════════════ */
-    .faq-list{display:grid;gap:14px;margin-top:36px}
-    .faq-item{background:#fff;border:1px solid var(--g200);border-radius:var(--r);padding:22px 24px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
-    .faq-q{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
-    .faq-q::before{content:'Q';min-width:28px;height:28px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:1px;flex-shrink:0}
-    .faq-a{font-size:14px;color:var(--g500);padding-left:38px;line-height:1.85}
+    .faq-list{display:grid;gap:10px;margin-top:36px}
+    .faq-item{background:#fff;border:1px solid var(--g200);border-radius:var(--r);box-shadow:0 4px 16px rgba(0,0,0,.04);overflow:hidden}
+    .faq-q{font-size:16px;font-weight:700;color:var(--navy);display:flex;gap:10px;align-items:center;cursor:pointer;padding:20px 24px;user-select:none;transition:.2s}
+    .faq-q:hover{background:var(--g100)}
+    .faq-q::before{content:'Q';min-width:28px;height:28px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
+    .faq-q::after{content:'+';margin-left:auto;font-size:20px;font-weight:300;color:var(--g500);flex-shrink:0;transition:.3s}
+    .faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--blue)}
+    .faq-a{font-size:14px;color:var(--g500);padding:0 24px 0 62px;line-height:1.85;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+    .faq-item.open .faq-a{max-height:300px;padding:0 24px 20px 62px}
 
     /* ════════════════ CTA ════════════════ */
     .cta-sec{background:linear-gradient(135deg,#07111f 0%,#1a3260 100%);padding:80px 0;position:relative;overflow:hidden}
@@ -391,58 +395,6 @@
   </div>
 </div>
 
-<!-- ════ PROBLEMS ════ -->
-<section class="sec" style="background:#fff">
-  <div class="wrap">
-    <span class="ey ey-b">よくある課題</span>
-    <h2 class="sec-ttl" style="font-size:clamp(24px,3.5vw,36px);font-weight:800;color:var(--navy);margin:14px 0 10px">こんな状態になっていませんか？</h2>
-    <p style="font-size:15px;color:var(--g500);max-width:600px">目まぐるしく変わる時代を、自社だけで追い続けるのは簡単ではありません。</p>
-    <div class="prob-grid">
-
-      <div class="prob-card">
-        <div class="prob-img">
-          <img src="nayami-marketing-.png" alt="更新しているのに反応が弱い" style="width:100%;height:100%;object-fit:cover;object-position:center;">
-        </div>
-        <div class="prob-body">
-          <h3>更新しているのに反応が弱い</h3>
-          <p>ただ投稿するだけでは、検索にもAIにも十分伝わらないケースがあります。</p>
-        </div>
-      </div>
-
-      <div class="prob-card">
-        <div class="prob-img">
-          <img src="kuchikomi-laguage-.png" alt="口コミ返信や編集が後回しになる" style="width:100%;height:100%;object-fit:cover;object-position:center;">
-        </div>
-        <div class="prob-body">
-          <h3>口コミ返信や編集が後回しになる</h3>
-          <p>日々の業務が忙しく、GBP全体の整備まで手が回らない事業者は少なくありません。</p>
-        </div>
-      </div>
-
-      <div class="prob-card">
-        <div class="prob-img">
-          <img src="global-language-translation-multilingualism-.png" alt="多言語や画像最適化までできていない" style="width:100%;height:100%;object-fit:cover;object-position:center;">
-        </div>
-        <div class="prob-body">
-          <h3>多言語や画像最適化までできていない</h3>
-          <p>インバウンドやAI検索も意識するなら、テキスト以外の整備も重要です。</p>
-        </div>
-      </div>
-
-      <div class="prob-card">
-        <div class="prob-img">
-          <img src="ai-trend-aio-aeo-llmo-.png" alt="AIに移行している時代は分かっているが、日々変わるトレンドを追うのは難しい" style="width:100%;height:100%;object-fit:cover;object-position:center;">
-        </div>
-        <div class="prob-body">
-          <h3>AIに移行している時代は分かっているが、日々変わるトレンドを追うのは難しい</h3>
-          <p>AIO、LLMO、AEOなど、新しい概念を常に追うのは現実的に負担が大きい領域です。</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ════ SERVICES ════ -->
 <section class="sec svc-section" id="services">
   <div class="wrap">
@@ -636,32 +588,32 @@
 
       <div class="faq-item">
         <div class="faq-q">AI検索対策（AIO・LLMO）とは何ですか？</div>
-        <p class="faq-a">AIO（AI Overview）やLLMO（Large Language Model Optimization）とは、ChatGPTやGoogleのAI検索に自社情報を引用・表示させるための最適化です。従来のSEOと組み合わせることで、AI時代の集客に対応できます。</p>
+        <div class="faq-a">AIO（AI Overview）やLLMO（Large Language Model Optimization）とは、ChatGPTやGoogleのAI検索に自社情報を引用・表示させるための最適化です。従来のSEOと組み合わせることで、AI時代の集客に対応できます。</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">SEOとAIOの違いは何ですか？</div>
-        <p class="faq-a">SEOはGoogleの検索結果ページへの表示最適化ですが、AIOはAIが生成する回答に自社情報を引用させる最適化です。AI集客ドットコムではSEO・AIO・LLMO・MEOを組み合わせた総合的な集客設計を行います。</p>
+        <div class="faq-a">SEOはGoogleの検索結果ページへの表示最適化ですが、AIOはAIが生成する回答に自社情報を引用させる最適化です。AI集客ドットコムではSEO・AIO・LLMO・MEOを組み合わせた総合的な集客設計を行います。</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">どの業種・エリアに対応していますか？</div>
-        <p class="faq-a">全国・全業種に対応しています。飲食店・美容サロン・クリニック・士業・ナイト業界・小売店など、業種やエリアを問わずご支援可能です。</p>
+        <div class="faq-a">全国・全業種に対応しています。飲食店・美容サロン・クリニック・士業・ナイト業界・小売店など、業種やエリアを問わずご支援可能です。</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">費用感はどのくらいですか？</div>
-        <p class="faq-a">月額14,980円（お試しプラン）から39,800円（グロースプラン）のプランをご用意しています。HP制作・管理・SEO対策・GBP運用まで含めたフルサポートもグロースプランで対応可能です。</p>
+        <div class="faq-a">月額14,980円（お試しプラン）から39,800円（グロースプラン）のプランをご用意しています。HP制作・管理・SEO対策・GBP運用まで含めたフルサポートもグロースプランで対応可能です。</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">GBP（Googleビジネスプロフィール）の運用代行だけお願いできますか？</div>
-        <p class="faq-a">はい、Googleビジネスプロフィールの最適化・運用代行のみのご依頼も承っています。ご状況に合わせて最適なプランをご提案します。</p>
+        <div class="faq-a">はい、Googleビジネスプロフィールの最適化・運用代行のみのご依頼も承っています。ご状況に合わせて最適なプランをご提案します。</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">AIO・LLMO・AEO・MEOの違いがよく分かりません。</div>
-        <p class="faq-a">問題ありません。AI時代の集客に必要な考え方を丁寧に整理しながら、実務に落とし込める形でサポートします。専門知識がなくてもご安心ください。</p>
+        <div class="faq-a">問題ありません。AI時代の集客に必要な考え方を丁寧に整理しながら、実務に落とし込める形でサポートします。専門知識がなくてもご安心ください。</div>
       </div>
 
     </div>
@@ -785,6 +737,16 @@
 </footer>
 
 <script>
+  // ── FAQ アコーディオン ──
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
   // ── モバイルナビ ──
   const mobHam = document.getElementById('mobHam');
   const mobNav = document.getElementById('mobNav');
