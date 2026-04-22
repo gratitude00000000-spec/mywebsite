@@ -89,6 +89,19 @@
 
     @media(max-width:960px){.hd-nav{display:none}}
     @media(max-width:600px){.hd-cta .btn-sm:first-child{display:none}}
+
+    /* ── モバイルナビ ── */
+    .mob-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+    .mob-ham span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+    .mob-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .mob-ham.open span:nth-child(2){opacity:0}
+    .mob-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mob-nav{position:fixed;top:61px;left:0;right:0;background:#fff;border-bottom:1px solid var(--g200);box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:99;display:none;flex-direction:column;padding:8px 0}
+    .mob-nav.open{display:flex}
+    .mob-nav a{padding:14px 24px;font-size:15px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--g100);transition:.2s}
+    .mob-nav a:last-child{border-bottom:none}
+    .mob-nav a:hover,.mob-nav a.active{background:var(--g100);color:var(--blue)}
+    @media(max-width:960px){.mob-ham{display:flex}}
   </style>
 </head>
 <body>
@@ -117,8 +130,20 @@
       </a>
       <a class="btn btn-gold btn-sm" href="tel:0989755682">📞 098-975-5682</a>
     </div>
+    <button class="mob-ham" id="mobHam" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<nav class="mob-nav" id="mobNav">
+  <a href="/">トップ</a>
+  <a href="/#services">サービス</a>
+  <a href="/#plans">料金プラン</a>
+  <a href="/blog/" class="active">ブログ</a>
+  <a href="/about/">会社概要</a>
+  <a href="/contact/">お問い合わせ</a>
+</nav>
 <!-- BREADCRUMB -->
 <div class="wrap breadcrumb">
   <a href="/">トップ</a><span>›</span>
@@ -206,6 +231,20 @@
   }
 
   loadPost();
+
+  // ── モバイルナビ ──
+  const mobHam = document.getElementById('mobHam');
+  const mobNav = document.getElementById('mobNav');
+  if(mobHam && mobNav){
+    mobHam.addEventListener('click', () => {
+      mobHam.classList.toggle('open');
+      mobNav.classList.toggle('open');
+    });
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobHam.classList.remove('open');
+      mobNav.classList.remove('open');
+    }));
+  }
 </script>
 </body>
 </html>
