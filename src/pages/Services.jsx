@@ -27,7 +27,6 @@ export default function Services() {
               <img src={s.image} alt={s.title} className={`w-full ${s.imageHeight || "h-52"} ${s.imageClass || "object-cover"}`} />
             )}
             <div className="p-8">
-            <div className="text-3xl mb-4">{s.icon}</div>
             <div className="flex flex-wrap items-center gap-3 mb-1">
               <h2 className="text-xl font-semibold text-amber-400">
                 {s.title}
