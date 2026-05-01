@@ -44,6 +44,17 @@ export default function Services() {
                   AI集客ドットコム
                 </a>
               )}
+              {s.isHpService && (
+                <a
+                  href="https://hp.ai-marketing-japan.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white text-sm px-5 py-2.5 rounded-full font-bold hover:opacity-90 transition"
+                  style={{ background: "linear-gradient(135deg, #d97706, #f59e0b)" }}
+                >
+                  サービス詳細を見る →
+                </a>
+              )}
             </div>
             <p className="mt-3 text-white/60 leading-7">{s.desc}</p>
             {s.details && (

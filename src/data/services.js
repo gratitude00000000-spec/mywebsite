@@ -24,6 +24,18 @@ export const serviceCards = [
     ],
   },
   {
+    icon: "🏠",
+    title: "HP・LP制作事業",
+    image: "/gratitude-hp-jigyounaiyou-.png",
+    isHpService: true,
+    desc: "制作料完全無料、月額サブスクリプションでスタートできる集客特化のHP・LP制作サービス。SEO対策・CVR設計を組み込み、見てもらうだけでなく問い合わせに繋がるサイトをリーズナブルに提供します。",
+    details: [
+      "制作料0円・月額サブスクでスタート",
+      "集客・CVR設計済みのHP・LP制作",
+      "SEO対策・スマホ対応・更新サポート込み",
+    ],
+  },
+  {
     icon: "📈",
     title: "Webマーケティング事業",
     image: "/llomo-meo-seo-webmarketing-.png",
